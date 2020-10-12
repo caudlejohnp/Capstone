@@ -15,17 +15,51 @@ namespace capstone.Data
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
         public IConfiguration Configuration { get; }
-        public DbSet<Student> Students { get; set; }
-        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Book> Books { get; set; }
         public ApplicationDbContext(
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
 
         }
-        public ApplicationDbContext() : base(new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlite("Data Source=app.db").Options,null)
+        public ApplicationDbContext() : base(new DbContextOptionsBuilder<ApplicationDbContext>().UseSqlite("Data Source=app.db").Options, null)
         {
 
+        }
+
+        //Seeded data table
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Book>().HasData(
+            new Book
+            {
+                Id = 1,
+                Title = "BookTitle",
+                Author = "BookAuthor",
+                SeriesName = "BookSeriesName",
+                SeriesNumber = 1,
+                UserId = " "
+            },
+            new Book
+            {
+                Id = 2,
+                Title = "BookTitle2",
+                Author = "BookAuthor",
+                SeriesName = "BookSeriesName",
+                SeriesNumber = 2,
+                UserId = " ",
+            },
+            new Book
+            {
+                Id = 3,
+                Title = "BookTitle3",
+                Author = "BookAuthor",
+                SeriesName = "BookSeriesName",
+                SeriesNumber = 3,
+                UserId = " ",
+            }
+            );
+            base.OnModelCreating(builder);
         }
     }
 }
