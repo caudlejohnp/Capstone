@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using capstone.Data;
 
-namespace capstone.Data.Migrations
+namespace capstone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201012191747_AddBook")]
-    partial class AddBook
+    [Migration("20201012201923_newBook")]
+    partial class newBook
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -322,35 +322,6 @@ namespace capstone.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Books");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Author = "BookAuthor",
-                            SeriesName = "BookSeriesName",
-                            SeriesNumber = 1,
-                            Title = "BookTitle",
-                            UserId = " "
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Author = "BookAuthor",
-                            SeriesName = "BookSeriesName",
-                            SeriesNumber = 2,
-                            Title = "BookTitle2",
-                            UserId = " "
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Author = "BookAuthor",
-                            SeriesName = "BookSeriesName",
-                            SeriesNumber = 3,
-                            Title = "BookTitle3",
-                            UserId = " "
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

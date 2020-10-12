@@ -26,40 +26,5 @@ namespace capstone.Data
         {
 
         }
-
-        //Seeded data table
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.Entity<Book>().HasData(
-            new Book
-            {
-                Id = 1,
-                Title = "BookTitle",
-                Author = "BookAuthor",
-                SeriesName = "BookSeriesName",
-                SeriesNumber = 1,
-                UserId = " "
-            },
-            new Book
-            {
-                Id = 2,
-                Title = "BookTitle2",
-                Author = "BookAuthor",
-                SeriesName = "BookSeriesName",
-                SeriesNumber = 2,
-                UserId = " ",
-            },
-            new Book
-            {
-                Id = 3,
-                Title = "BookTitle3",
-                Author = "BookAuthor",
-                SeriesName = "BookSeriesName",
-                SeriesNumber = 3,
-                UserId = " ",
-            }
-            );
-            base.OnModelCreating(builder);
-        }
     }
 }
