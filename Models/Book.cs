@@ -16,6 +16,7 @@ namespace capstone.Models
         public string Author { get; set; }
         public string SeriesName { get; set; }
         public int SeriesNumber { get; set; }
+        public string Synopsis { get; set; }
         public string UserId { get; set; }
         public ApplicationUser User { get; set; }
     }
