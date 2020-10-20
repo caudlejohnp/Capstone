@@ -8,6 +8,49 @@
   margin: 1%;
 }
 
+.homeLogin {
+  display: flex;
+  justify-content: end;
+}
+
+.homeReg {
+  display: flex;
+  justify-content: center;
+}
+
+.pageContNoAuth {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.chooseLib {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: 5em;
+  text-align: center;
+  margin-top: 5%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+mat-card {
+  margin-top: 10%;
+  font-size: 40px;
+  text-align: center;
+  width: 200px;
+  height: 150px;
+}
+
+.matButton {
+  background-color: brown;
+}
+
+ul {
+  color: white;
+}
+
 body {
   background-image: url(./assets/new-back-02.jpg);
   background-size: cover;

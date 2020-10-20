@@ -1,9 +1,64 @@
-<div class="page-container">
-    <h1 style="text-align: center;">Hello! Welcome to your Digital Library.</h1>
 
-    <div class="button-container" style="text-align: center;">
-        <h3>Book Library.</h3>
-        <button class="btn btn-primary btn-lg" routerLink="/books">Books</button>
+    <div *ngIf="!(isAuthenticated | async)">
+        
+        <h1>Welcome to John's Capstone!</h1>
+
+<div class="pageContNoAuth">
+
+        <div class="featureCont">
+
+            <h3 style="margin-top: 10%;">Current Features...</h3>
+            <ul>Book Library.</ul>
+            <ul>Add a book to your library.</ul>
+            <ul>Keep up with the series order.</ul>
+
+            <h3 style="margin-top: 20%;">Future Features...</h3>
+            <ul>Add a movie library.</ul>
+            <ul>What format the movie is.</ul>
+            <ul>Is it owned digitally.</ul>
+
+        </div>
+
+        <div class="authContainer">
+
+            <div class="homeLogin">
+                <h5 style="margin-top: 10%;">To access your digital library please login.</h5>
+                <button style="margin-top: 10%;" class="btn btn-primary btn-sm" routerLink="/authentication/login">Login</button>
+            </div>
+
+            <div class="homeReg">
+                <h5 style="margin-top: 2%;">Register a new account here.</h5>
+                <button class="btn btn-primary btn-sm" routerLink="/authentication/register">Register</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="pageContIsAuth">
+
+    <div *ngIf="(isAuthenticated | async)">
+
+        <h1>Hello! Welcome to your Digital Library.</h1>
+
+        <div class="chooseLib">
+
+            <mat-card>
+                <mat-card-title>Book Library.</mat-card-title>
+                <mat-card-actions>
+                    <button class="matButton" mat-button routerLink="/books">Enter</button>
+                </mat-card-actions>
+            </mat-card>
+
+            <mat-card>
+                <mat-card-title>Coming Soon.</mat-card-title>
+                <mat-card-title>Movies</mat-card-title>
+            </mat-card>
+
+        </div>
+
     </div>
 
 </div>
