@@ -15,5 +15,4 @@ export class HomeComponent {
   async ngOnInit() {
     this.isAuthenticated = this.authService.isAuthenticated();
   }
-
 }
